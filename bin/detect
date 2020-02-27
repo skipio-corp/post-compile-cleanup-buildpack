@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -f $1/.post-compile-cleanup ]; then
+  echo "post compile cleanup list found"
+  exit 0
+else
+  exit 1
+fi

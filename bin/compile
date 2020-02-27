@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cleanup_list_file="$BUILD_DIR/.post-compile-cleanup"
+
+while IFS="" read -r p || [ -n "$p" ]
+do
+  echo "rm -rf \"$BUILD_DIR/$p\""
+  rm -rf "$BUILD_DIR/$p"
+done < $cleanup_list_file
